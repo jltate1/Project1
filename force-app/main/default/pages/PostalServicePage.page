@@ -1,0 +1,26 @@
+<apex:page controller="AccountEdit_CC" lightningStylesheets="true">
+    <apex:form>
+        <apex:pageBlock title="Account Details">
+            <!-- {!$User.Contact.Account.Name} -->
+            <apex:pageBlocktable value="{!acc}" var="a" title="Results">
+                <apex:inlineEditSupport showOnEdit="update, cancelButton" hideOnEdit="editButton" event="ondblclick" changedStyleClass="myBoldClass" resetFunction="resetInlineEdit" />
+                <apex:column headerValue="Name">
+                    <apex:outputField value="{!a.Name}" />
+                </apex:column>
+                <apex:column headerValue="Number Of Employees">
+                    <apex:outputField value="{!a.NumberOfEmployees}" />
+                </apex:column>
+                <apex:column headerValue="Industry">
+                    <apex:outputField value="{!a.Industry}" />
+                </apex:column>
+                <apex:column headerValue="Type">
+                    <apex:outputField value="{!a.Type}" />
+                </apex:column>
+                <apex:column headerValue="Website">
+                    <apex:outputField value="{!a.Website}" />
+                </apex:column>
+            </apex:pageBlocktable>
+        </apex:pageBlock>
+        <apex:commandButton id="update" action="{!quickUpdat}" value="Update Record" />
+    </apex:form> 
+</apex:page>
