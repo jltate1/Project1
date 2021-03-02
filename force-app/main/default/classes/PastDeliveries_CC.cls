@@ -1,7 +1,7 @@
 public inherited sharing class PastDeliveries_CC {
     public PastDeliveries_CC() {}
 
-    public static final String PAST_DELIVERY_TAG = 'Shipped';
+    public static final String PAST_DELIVERY_TAG = 'Delivered';
 
     public ID userContactId {
         get {
@@ -18,7 +18,7 @@ public inherited sharing class PastDeliveries_CC {
             if (mailDelivered == null) {
             
                 mailDelivered =  [
-                    SELECT Id, Name, Tracking_Number__c 
+                    SELECT Id, Name, Tracking_Number__c, 
                     Delivery_Status__c, 
                     Send_To__r.First_and_Last_name__c
                     FROM Mail__c 

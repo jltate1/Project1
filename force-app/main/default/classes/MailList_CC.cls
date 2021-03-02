@@ -24,6 +24,6 @@ public class MailList_CC {
     public MailList_CC() {
         //used get user id to display user packages
         ID contactId = [SELECT ContactId FROM User WHERE id = :Userinfo.getUserId()].contactId;
-       	packageList  = [SELECT Delivery_Status__c, Name FROM Mail__c WHERE Id = :contactId AND Delivery_Status__c = 'Shipped'];
+       	packageList  = [SELECT Delivery_Status__c, Name, Send_To__r.First_and_Last_name__c FROM Mail__c WHERE Send_To__r.First_and_Last_name__c = :contactId AND Delivery_Status__c = 'Shipped'];
     }
 }
