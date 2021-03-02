@@ -1,0 +1,14 @@
+<apex:page controller="MailList_CC" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock title="{!userName}">
+            <apex:pageBlockTable value="{!packageList}" var="p" title="Results">
+                <apex:column headerValue="Mail Name">
+                    <apex:outputField value="{!p.Name}"/> 
+                </apex:column>
+                <apex:column headerValue="Delivery Status">
+                    <apex:outputField value="{!p.Delivery_Status__c}"/> 
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
