@@ -15,10 +15,8 @@
                   <apex:outputLink value="/{!m.id}">{!m.Name}</apex:outputLink>
                 </apex:column>
                 <apex:column value="{!m.Name}"/>
-                <!-- <apex:column value="{!m.Inhabitant__r.Contact__c.Name}"/>
-                <apex:column value="{!m.Delivery_Status__c}"/> -->
-                <apex:column value="{!m.Recipient__c}"/>
-                <apex:column value="{!m.Delivered__c}"/>
+                <apex:column value="{!m.Send_To__r.First_and_Last_name__c}"/>
+                <apex:column value="{!m.Delivery_Status__c}"/>
                 <apex:column value="{!m.Tracking_Number__c}"/>
             </apex:pageBlockTable>
             <apex:outputText value="No mail found matching criteria" rendered="{!AND(NOT(matches), searched)}" />

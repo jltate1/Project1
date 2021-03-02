@@ -43,11 +43,9 @@ public inherited sharing class DisplayMail_CC {
 
      if (String.isNotBlank(searchText) && searchtext.length() > 1) {
 
-      // List<Mail__c> mail = [SELECT Id, Name, Inhabitant__r.Contact__c.Name, Delivery_Status__c, Tracking_Number__c FROM Mail__c WHERE Tracking_Number__c =: searchText];
+      List<Mail__c> mail = [SELECT Id, Name, Send_To__r.First_and_Last_name__c, Delivery_Status__c, Tracking_Number__c FROM Mail__c WHERE Tracking_Number__c =: searchText];
 
-      List<Mail__c> mail = [SELECT Id, Name, Recipient__c, Delivered__c, Tracking_Number__c FROM Mail__c WHERE Tracking_Number__c =: searchText];
-
-       setMail = new ApexPages.StandardSetController(mail);
+        setMail = new ApexPages.StandardSetController(mail);
 
        searched = true;
      } else {

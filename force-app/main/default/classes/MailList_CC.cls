@@ -13,7 +13,8 @@ public class MailList_CC {
     public String userName {
         get {
             if (userName == null) {
-            userName = UserInfo.getFirstName() + ' ' + UserInfo.getLastName();//get first and last name 
+            //get first and last name 
+            userName = UserInfo.getFirstName() + ' ' + UserInfo.getLastName();
             }
             return userName;
         }
@@ -21,7 +22,8 @@ public class MailList_CC {
         set;
     }
     public MailList_CC() {
-        ID contactId = [SELECT ContactId FROM User WHERE id = :Userinfo.getUserId()].contactId;//used get user id to display user packages
+        //used get user id to display user packages
+        ID contactId = [SELECT ContactId FROM User WHERE id = :Userinfo.getUserId()].contactId;
        	packageList  = [SELECT Delivery_Status__c, Name FROM Mail__c WHERE Id = :contactId AND Delivery_Status__c = 'Shipped'];
     }
 }
