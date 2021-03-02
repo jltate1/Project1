@@ -1,0 +1,27 @@
+<apex:page controller="DisplayMail_CC" tabStyle="Contact" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock id="mailList" title="Search Mail">
+            <apex:panelGrid cellspacing="4" columns="6" style="line-height:2.2em" >
+                <apex:outputText >Tracking Number:</apex:outputText>
+                <apex:panelGroup style="padding-right:1em">
+                    <apex:inputText style="vertical-align:middle;" id="searchText" value="{!searchText}"/>
+                    <apex:commandButton status="notifyUser" reRender="mailList" value="Search" action="{!Search}" />
+                </apex:panelGroup>
+                <apex:actionStatus id="notifyUser" startText="Searching..." stopText=" "></apex:actionStatus>
+            </apex:panelGrid>
+            <apex:pageMessages />
+            <apex:pageBlockTable var="m" value="{!mail}" >
+                <apex:column headerValue="Name">
+                  <apex:outputLink value="/{!m.id}">{!m.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!m.Name}"/>
+                <!-- <apex:column value="{!m.Inhabitant__r.Contact__c.Name}"/>
+                <apex:column value="{!m.Delivery_Status__c}"/> -->
+                <apex:column value="{!m.Recipient__c}"/>
+                <apex:column value="{!m.Delivered__c}"/>
+                <apex:column value="{!m.Tracking_Number__c}"/>
+            </apex:pageBlockTable>
+            <apex:outputText value="No mail found matching criteria" rendered="{!AND(NOT(matches), searched)}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
