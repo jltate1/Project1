@@ -1,4 +1,4 @@
-<apex:page controller="PastDeliveries_CC" lightningStylesheets= "true">
+<apex:page controller="PastDeliveries_CC" lightningStylesheets="true">
 <apex:pageBlock title="Mail Delivered">
     <apex:pageBlockTable value="{!mailDelivered}" var="mail" id="mailList">
                     <apex:column headerValue="Mail Name">

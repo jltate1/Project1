@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Route Queue</name>
+    <queueMembers>
+        <users>
+            <user>larry_thomas.00de0000000erbwmaa.oskqzu4kxert.ijwejwhpjsth@pab56365.com</user>
+        </users>
+    </queueMembers>
+</Queue>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <interviewLabel>Welcome Video Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Welcome Video Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Welcome_Video</name>
+        <label>Welcome Video</label>
+        <locationX>487</locationX>
+        <locationY>116</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>VideoViewer</name>
+            <extensionName>vfv:YoutubePlayer</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>youtube_id</name>
+                <value>
+                    <stringValue>n6lsAsgCnH8</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Welcome_Video</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

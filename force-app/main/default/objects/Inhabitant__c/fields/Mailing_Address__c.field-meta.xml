@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mailing_Address__c</fullName>
+    <externalId>false</externalId>
+    <label>Mailing Address</label>
+    <referenceTo>Address__c</referenceTo>
+    <relationshipLabel>Inhabitants (Mailing Address)</relationshipLabel>
+    <relationshipName>Inhabitants1</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>
