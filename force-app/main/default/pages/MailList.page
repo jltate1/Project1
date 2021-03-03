@@ -1,6 +1,6 @@
 <apex:page controller="MailList_CC" lightningStylesheets="true">
     <apex:form >
-        <apex:pageBlock title="{!userName}">
+        <apex:pageBlock title="Mail in Shipping">
             <apex:pageBlockTable value="{!packageList}" var="p" title="Results">
                 <apex:column headerValue="Mail Name">
                     <apex:outputField value="{!p.Name}"/> 

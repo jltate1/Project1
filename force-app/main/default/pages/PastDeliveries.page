@@ -1,18 +1,17 @@
-<apex:page controller="PastDeliveries_CC">
-<h1>Past Deliveries</h1>
-<apex:pageBlock>
+<apex:page controller="PastDeliveries_CC" lightningStylesheets= "true">
+<apex:pageBlock title="Mail Delivered">
     <apex:pageBlockTable value="{!mailDelivered}" var="mail" id="mailList">
+                    <apex:column headerValue="Mail Name">
+                        <apex:outputField value="{!mail.Name}"/> 
+                    </apex:column>
                     <apex:column headerValue="Tracking Number">
-                        <apex:outputLink value="/{!mail.ID}">
-                            {!mail.Tracking_Number__c}
-                        </apex:outputLink>
+                        <apex:outputField value="{!mail.Tracking_Number__c}" />
                     </apex:column>
                     <!-- <apex:column headerValue="Delivery Date"> -->
                     <apex:column headerValue="Delivery Status">
                             <!-- {! mail.Last_Status_Update_Date__c} -->
-                        {!mail.Delivery_Status__c}
+                        <apex:outputField value="{!mail.Delivery_Status__c}" />
                     </apex:column>
     </apex:pageBlockTable>
 </apex:pageBlock>
-
 </apex:page>

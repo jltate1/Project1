@@ -1,4 +1,4 @@
-public inherited sharing class PastDeliveries_CC {
+public class PastDeliveries_CC {
     public PastDeliveries_CC() {}
 
     public static final String PAST_DELIVERY_TAG = 'Delivered';

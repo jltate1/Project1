@@ -1,4 +1,4 @@
-public inherited sharing class DisplayMail_CC {
+public class DisplayMail_CC {
   public String searchText {
     get {
       return searchText;
